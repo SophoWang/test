@@ -14,7 +14,7 @@
 		}
 		h1 {
 			background-color: black;
-			color: white;
+			color: black;
 			height: 40px;
 			font-size: 24px;
 			font-weight: normal;
@@ -26,9 +26,23 @@
 			width: 100%;
 			z-index: 1;
 		}
+		footer {
+			background-color: black;
+			color: black;
+			height: 28px;
+			font-size: 24px;
+			font-weight: normal;
+			left: 0;
+			line-height: 28px;
+			position: fixed;
+			text-align: center;
+			bottom: 0;
+			width: 100%;
+			z-index: 1;
+		}
 		h1 a {
-			border-bottom: 1px solid white;
-			color: white;
+			border-bottom: 1px solid black;
+			color: black;
 			display: inline-block;
 			line-height: 30px;
 			text-decoration: none;
@@ -75,16 +89,32 @@
 			});
 		});
 		</script>
+		<script>
+		    function getRandom(min, max) {
+		        return Math.floor(Math.random() * (max - min + 1)) + min;
+		    }
+
+	        function getRandomColor() {
+	            var c1 = getRandom(0, 255);
+	            var c2 = getRandom(0, 255);
+	            var c3 = getRandom(0, 255);
+	            return 'rgb(' + c1 + ',' + c2 + ',' + c3 + ')'
+	        }
+        	console.log(getRandomColor());
+        
+	        window.onload = function() {
+	            //document.body.style.backgroundColor = getRandomColor();
+				var color = getRandomColor();
+				var bgcolor = getRandomColor();
+				//document.body.style.backgroundColor = bgcolor;
+				document.getElementById('title').style.backgroundColor = color;
+				document.getElementById('footer').style.backgroundColor = color;
+	        }
+		</script>
 	</head>
-	<body>
-		<h1><a href="https://riscv.org/">RISC-V</a> Groceries</h1>
-		<div class="photo summer" data-stellar-background-ratio="0.5"><span>Summer</span></div>
-		<div class="photo autumn" data-stellar-background-ratio="0.5"><span>Autumn</span></div>
-		<div class="photo winter" data-stellar-background-ratio="0.5"><span>Winter</span></div>
-		<div class="photo spring" data-stellar-background-ratio="0.5"><span>Spring</span></div>
-		<div class="photo summer" data-stellar-background-ratio="0.5"><span>Summer</span></div>
-		<div class="photo autumn" data-stellar-background-ratio="0.5"><span>Autumn</span></div>
-		<div class="photo winter" data-stellar-background-ratio="0.5"><span>Winter</span></div>
-		<div class="photo spring" data-stellar-background-ratio="0.5"><span>Spring</span></div>
+	<body background="images/bg_06.gif">
+		<h1 id="title"><a href="https://riscv.org/">RISC-V</a> Groceries</h1>
+
+		<footer id="footer">RISC-V Groceries &#169; sophomore-class</h1>
 	</body>
 </html>
